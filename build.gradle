@@ -1,0 +1,31 @@
+plugins {
+    id 'war'
+}
+
+group 'org.hm.sfu'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.11'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+    // https://mvnrepository.com/artifact/jakarta.platform/jakarta.jakartaee-web-api
+    compileOnly group: 'jakarta.platform', name: 'jakarta.jakartaee-web-api', version: '9.1.0'
+
+    // https://mvnrepository.com/artifact/org.apache.myfaces.core/myfaces-api
+    implementation group: 'org.apache.myfaces.core', name: 'myfaces-api', version: '3.0.1'
+
+    // https://mvnrepository.com/artifact/org.apache.myfaces.core/myfaces-impl
+    implementation group: 'org.apache.myfaces.core', name: 'myfaces-impl', version: '3.0.1'
+
+}
+
+test {
+    useJUnitPlatform()
+}
